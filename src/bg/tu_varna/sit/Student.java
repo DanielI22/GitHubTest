@@ -7,7 +7,7 @@ public class Student {
     private int course;
     private Program program;
     private int group;
-    private String status;
+    private StudentStatus status;
     private double averageGrade;
     private Map<MandatoryDiscipline, Integer> mandatoryDisciplineSet = new HashMap<>();
     private Map<OptionalDiscipline, Integer> optionalDisciplineSet = new HashMap<>();
@@ -37,11 +37,11 @@ public class Student {
         this.course = course;
     }
 
-    public String getStatus() {
+    public StudentStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(StudentStatus status) {
         this.status = status;
     }
 
