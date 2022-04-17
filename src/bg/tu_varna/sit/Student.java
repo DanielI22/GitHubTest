@@ -11,7 +11,14 @@ public class Student {
     private double averageGrade;
     private Map<MandatoryDiscipline, Integer> mandatoryDisciplineSet = new HashMap<>();
     private Map<OptionalDiscipline, Integer> optionalDisciplineSet = new HashMap<>();
+    private int credits;
 
+    public Student() {
+    }
+
+    public Student(String name) {
+        this.name = name;
+    }
 
     public String getName() {
         return name;
@@ -85,6 +92,14 @@ public class Student {
         this.optionalDisciplineSet = optionalDisciplineSet;
     }
 
+    public int getCredits() {
+        return credits;
+    }
+
+    public void setCredits(int credits) {
+        this.credits = credits;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -96,5 +111,21 @@ public class Student {
     @Override
     public int hashCode() {
         return Objects.hash(fn);
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", fn='" + fn + '\'' +
+                ", course=" + course +
+                ", program=" + program +
+                ", group=" + group +
+                ", status=" + status +
+                ", averageGrade=" + averageGrade +
+                ", mandatoryDisciplineSet=" + mandatoryDisciplineSet +
+                ", optionalDisciplineSet=" + optionalDisciplineSet +
+                ", credits=" + credits +
+                '}';
     }
 }

@@ -1,15 +1,24 @@
 package bg.tu_varna.sit;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 public class Program {
     private String name;
-    private Map<MandatoryDiscipline, Set<Integer>> mandatoryDisciplineMap = new HashMap<>();
-    private Map<OptionalDiscipline, Set<Integer>> optionalDisciplineMap = new HashMap<>();
+    private HashMap<MandatoryDiscipline, HashSet<Integer>> mandatoryDisciplineMap = new HashMap<>();
+    private HashMap<OptionalDiscipline, HashSet<Integer>> optionalDisciplineMap = new HashMap<>();
     private int minCredits;
+
+    public Program() {
+    }
+
+    public Program(String name) {
+        this.name = name;
+    }
+
+    public Program(String name, int minCredits) {
+        this.name = name;
+        this.minCredits = minCredits;
+    }
 
     public String getName() {
         return name;
@@ -19,19 +28,19 @@ public class Program {
         this.name = name;
     }
 
-    public Map<MandatoryDiscipline, Set<Integer>> getMandatoryDisciplineMap() {
+    public HashMap<MandatoryDiscipline, HashSet<Integer>> getMandatoryDisciplineMap() {
         return mandatoryDisciplineMap;
     }
 
-    public void setMandatoryDisciplineMap(Map<MandatoryDiscipline, Set<Integer>> mandatoryDisciplineMap) {
+    public void setMandatoryDisciplineMap(HashMap<MandatoryDiscipline, HashSet<Integer>> mandatoryDisciplineMap) {
         this.mandatoryDisciplineMap = mandatoryDisciplineMap;
     }
 
-    public Map<OptionalDiscipline, Set<Integer>> getOptionalDisciplineMap() {
+    public HashMap<OptionalDiscipline, HashSet<Integer>> getOptionalDisciplineMap() {
         return optionalDisciplineMap;
     }
 
-    public void setOptionalDisciplineMap(Map<OptionalDiscipline, Set<Integer>> optionalDisciplineMap) {
+    public void setOptionalDisciplineMap(HashMap<OptionalDiscipline, HashSet<Integer>> optionalDisciplineMap) {
         this.optionalDisciplineMap = optionalDisciplineMap;
     }
 
@@ -54,5 +63,15 @@ public class Program {
     @Override
     public int hashCode() {
         return Objects.hash(name);
+    }
+
+    @Override
+    public String toString() {
+        return "Program{" +
+                "name='" + name + '\'' +
+                ", mandatoryDisciplineMap=" + mandatoryDisciplineMap +
+                ", optionalDisciplineMap=" + optionalDisciplineMap +
+                ", minCredits=" + minCredits +
+                '}';
     }
 }

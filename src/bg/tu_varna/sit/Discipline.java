@@ -5,6 +5,8 @@ import java.util.Objects;
 public abstract class Discipline {
     private String name;
 
+    public Discipline() {
+    }
 
     public Discipline(String name) {
         this.name = name;
@@ -29,5 +31,12 @@ public abstract class Discipline {
     @Override
     public int hashCode() {
         return Objects.hash(name);
+    }
+
+    @Override
+    public String toString() {
+        return "Discipline{" +
+                "name='" + name + '\'' +
+                '}';
     }
 }
