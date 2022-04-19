@@ -30,6 +30,7 @@ public class JaxXMLToObject {
                 return mySystem;
             }
         } catch (Exception e) {
+            e.printStackTrace();
             throw new InvalidFileOrFilePathException();
         }
     }

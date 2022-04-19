@@ -33,6 +33,7 @@ public class JaxObjectToXML {
             //Writes XML file to file-system
             jaxbMarshaller.marshal(jaxbElement, file);
         } catch (Exception e) {
+            e.printStackTrace();
             throw new InvalidFileOrFilePathException();
         }
     }

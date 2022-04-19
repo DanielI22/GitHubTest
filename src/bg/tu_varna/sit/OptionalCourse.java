@@ -1,12 +1,12 @@
 package bg.tu_varna.sit;
 
-public class OptionalDiscipline extends Discipline{
+public class OptionalCourse extends Course {
     private int credits;
 
-    public OptionalDiscipline() {
+    public OptionalCourse() {
     }
 
-    public OptionalDiscipline(String name, int credits) {
+    public OptionalCourse(String name, int credits) {
         super(name);
         this.credits = credits;
     }

@@ -2,13 +2,13 @@ package bg.tu_varna.sit;
 
 import java.util.Objects;
 
-public abstract class Discipline {
+public abstract class Course {
     private String name;
 
-    public Discipline() {
+    public Course() {
     }
 
-    public Discipline(String name) {
+    public Course(String name) {
         this.name = name;
     }
 
@@ -23,8 +23,8 @@ public abstract class Discipline {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Discipline)) return false;
-        Discipline that = (Discipline) o;
+        if (!(o instanceof Course)) return false;
+        Course that = (Course) o;
         return Objects.equals(name, that.name);
     }
 
