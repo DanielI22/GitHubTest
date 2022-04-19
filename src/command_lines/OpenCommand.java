@@ -22,6 +22,8 @@ public class OpenCommand implements Command{
         System.out.println(StudentServiceSystem.getInstance().toString());
         StudentServiceSystem.getInstance().simulatePrograms();
         System.out.println(StudentServiceSystem.getInstance().toString());
+        StudentServiceSystem.getInstance().simulatePrograms();
+        System.out.println(StudentServiceSystem.getInstance().toString());
         fileName = filePath.substring(filePath.lastIndexOf("\\")+1);
         System.out.println("Successfully opened " + fileName);
 
