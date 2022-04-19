@@ -4,8 +4,8 @@ import java.util.*;
 
 public class Program {
     private String name;
-    private HashMap<MandatoryDiscipline, HashSet<Integer>> mandatoryDisciplineMap = new HashMap<>();
-    private HashMap<OptionalDiscipline, HashSet<Integer>> optionalDisciplineMap = new HashMap<>();
+    private HashMap<MandatoryCourse, String> mandatoryCourseMap = new HashMap<>();
+    private HashMap<OptionalCourse, String> optionalCourseMap = new HashMap<>();
     private int minCredits;
 
     public Program() {
@@ -28,20 +28,20 @@ public class Program {
         this.name = name;
     }
 
-    public HashMap<MandatoryDiscipline, HashSet<Integer>> getMandatoryDisciplineMap() {
-        return mandatoryDisciplineMap;
+    public HashMap<MandatoryCourse, String> getMandatoryCourseMap() {
+        return mandatoryCourseMap;
     }
 
-    public void setMandatoryDisciplineMap(HashMap<MandatoryDiscipline, HashSet<Integer>> mandatoryDisciplineMap) {
-        this.mandatoryDisciplineMap = mandatoryDisciplineMap;
+    public void setMandatoryCourseMap(HashMap<MandatoryCourse, String> mandatoryCourseMap) {
+        this.mandatoryCourseMap = mandatoryCourseMap;
     }
 
-    public HashMap<OptionalDiscipline, HashSet<Integer>> getOptionalDisciplineMap() {
-        return optionalDisciplineMap;
+    public HashMap<OptionalCourse, String> getOptionalDisciplineMap() {
+        return optionalCourseMap;
     }
 
-    public void setOptionalDisciplineMap(HashMap<OptionalDiscipline, HashSet<Integer>> optionalDisciplineMap) {
-        this.optionalDisciplineMap = optionalDisciplineMap;
+    public void setOptionalCourseMap(HashMap<OptionalCourse, String> optionalCourseMap) {
+        this.optionalCourseMap = optionalCourseMap;
     }
 
     public int getMinCredits() {
@@ -69,8 +69,8 @@ public class Program {
     public String toString() {
         return "Program{" +
                 "name='" + name + '\'' +
-                ", mandatoryDisciplineMap=" + mandatoryDisciplineMap +
-                ", optionalDisciplineMap=" + optionalDisciplineMap +
+                ", mandatoryCourseMap=" + mandatoryCourseMap +
+                ", optionalCourseMap=" + optionalCourseMap +
                 ", minCredits=" + minCredits +
                 '}';
     }

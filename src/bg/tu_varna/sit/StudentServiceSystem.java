@@ -36,58 +36,59 @@ public class StudentServiceSystem {
     }
 
     public void simulatePrograms() {
-        mainStudentSet.add(new Student("George"));
+        mainStudentSet.add(new Student("George", "001"));
+        mainStudentSet.add(new Student("Peter", "005"));
 
-        MandatoryDiscipline discipline1 = new MandatoryDiscipline("Base programming");
-        MandatoryDiscipline discipline2 = new MandatoryDiscipline("Database");
-        MandatoryDiscipline discipline3 = new MandatoryDiscipline("Web design");
-        MandatoryDiscipline discipline4 = new MandatoryDiscipline("Electronics");
-        MandatoryDiscipline discipline5 = new MandatoryDiscipline("Algorithms");
-        MandatoryDiscipline discipline6 = new MandatoryDiscipline("OOP");
-        MandatoryDiscipline discipline7 = new MandatoryDiscipline("Maths");
-        MandatoryDiscipline discipline8 = new MandatoryDiscipline("Digital systems");
-        MandatoryDiscipline discipline9 = new MandatoryDiscipline("Analog systems");
-        MandatoryDiscipline discipline10 = new MandatoryDiscipline("Computer Architecture");
+        MandatoryCourse discipline1 = new MandatoryCourse("Base programming");
+        MandatoryCourse discipline2 = new MandatoryCourse("Database");
+        MandatoryCourse discipline3 = new MandatoryCourse("Web design");
+        MandatoryCourse discipline4 = new MandatoryCourse("Electronics");
+        MandatoryCourse discipline5 = new MandatoryCourse("Algorithms");
+        MandatoryCourse discipline6 = new MandatoryCourse("OOP");
+        MandatoryCourse discipline7 = new MandatoryCourse("Maths");
+        MandatoryCourse discipline8 = new MandatoryCourse("Digital systems");
+        MandatoryCourse discipline9 = new MandatoryCourse("Analog systems");
+        MandatoryCourse discipline10 = new MandatoryCourse("Computer Architecture");
 
-        OptionalDiscipline odiscipline1 = new OptionalDiscipline("English", 2);
-        OptionalDiscipline odiscipline2 = new OptionalDiscipline("French", 8);
-        OptionalDiscipline odiscipline3 = new OptionalDiscipline("Microprocessors", 6);
-        OptionalDiscipline odiscipline4 = new OptionalDiscipline("Geometry", 4);
-        OptionalDiscipline odiscipline5 = new OptionalDiscipline("Calculus", 7);
+        OptionalCourse odiscipline1 = new OptionalCourse("English", 2);
+        OptionalCourse odiscipline2 = new OptionalCourse("French", 8);
+        OptionalCourse odiscipline3 = new OptionalCourse("Microprocessors", 6);
+        OptionalCourse odiscipline4 = new OptionalCourse("Geometry", 4);
+        OptionalCourse odiscipline5 = new OptionalCourse("Calculus", 7);
 
-        HashMap<MandatoryDiscipline, HashSet<Integer>> map1 = new HashMap<>();
-        map1.put(discipline1, new HashSet<>(Arrays.asList(1)));
-        map1.put(discipline2, new HashSet<>(Arrays.asList(2)));
-        map1.put(discipline3, new HashSet<>(Arrays.asList(3)));
-        map1.put(discipline4, new HashSet<>(Arrays.asList(1,2)));
-        map1.put(discipline5, new HashSet<>(Arrays.asList(2,3)));
-        map1.put(discipline6, new HashSet<>(Arrays.asList(1,3)));
+        HashMap<MandatoryCourse, String> map1 = new HashMap<>();
+        map1.put(discipline1, "1");
+        map1.put(discipline2,"2");
+        map1.put(discipline3, "3");
+        map1.put(discipline4, "1 2");
+        map1.put(discipline5, "2 3");
+        map1.put(discipline6, "1 3");
 
-        HashMap<OptionalDiscipline, HashSet<Integer>> omap1 = new HashMap<>();
-        omap1.put(odiscipline1, new HashSet<>(Arrays.asList(1)));
-        omap1.put(odiscipline3, new HashSet<>(Arrays.asList(2)));
-        omap1.put(odiscipline4, new HashSet<>(Arrays.asList(2,3)));
+        HashMap<OptionalCourse, String> omap1 = new HashMap<>();
+        omap1.put(odiscipline1, "1");
+        omap1.put(odiscipline3, "2");
+        omap1.put(odiscipline4, "2 3");
 
         Program program1 = new Program("SIT", 6);
-        program1.setMandatoryDisciplineMap(map1);
-        program1.setOptionalDisciplineMap(omap1);
+        program1.setMandatoryCourseMap(map1);
+        program1.setOptionalCourseMap(omap1);
 
 
-        HashMap<MandatoryDiscipline, HashSet<Integer>> map2 = new HashMap<>();
-        map2.put(discipline1, new HashSet<>(Arrays.asList(1)));
-        map2.put(discipline7, new HashSet<>(Arrays.asList(2)));
-        map2.put(discipline8, new HashSet<>(Arrays.asList(3)));
-        map2.put(discipline9, new HashSet<>(Arrays.asList(1,2)));
-        map2.put(discipline10, new HashSet<>(Arrays.asList(2,3)));
+        HashMap<MandatoryCourse, String> map2 = new HashMap<>();
+        map2.put(discipline1, "1");
+        map2.put(discipline7, "2");
+        map2.put(discipline8, "3");
+        map2.put(discipline9, "1 2");
+        map2.put(discipline10, "2 3");
 
-        HashMap<OptionalDiscipline, HashSet<Integer>> omap2 = new HashMap<>();
-        omap1.put(odiscipline1, new HashSet<>(Arrays.asList(1)));
-        omap1.put(odiscipline2, new HashSet<>(Arrays.asList(2)));
-        omap1.put(odiscipline5, new HashSet<>(Arrays.asList(2,3)));
+        HashMap<OptionalCourse, String> omap2 = new HashMap<>();
+        omap2.put(odiscipline1, "1");
+        omap2.put(odiscipline2, "2");
+        omap2.put(odiscipline5, "2 3");
 
         Program program2 = new Program("KST", 10);
-        program2.setMandatoryDisciplineMap(map2);
-        program2.setOptionalDisciplineMap(omap2);
+        program2.setMandatoryCourseMap(map2);
+        program2.setOptionalCourseMap(omap2);
 
         mainProgramSet.add(program1);
         mainProgramSet.add(program2);

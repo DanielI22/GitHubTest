@@ -4,20 +4,21 @@ import java.util.*;
 public class Student {
     private String name;
     private String fn;
-    private int course;
+    private int year;
     private Program program;
     private int group;
     private StudentStatus status;
     private double averageGrade;
-    private Map<MandatoryDiscipline, Integer> mandatoryDisciplineSet = new HashMap<>();
-    private Map<OptionalDiscipline, Integer> optionalDisciplineSet = new HashMap<>();
+    private Map<MandatoryCourse, Integer> mandatoryCourseMap = new HashMap<>();
+    private Map<OptionalCourse, Integer> optionalCourseMap = new HashMap<>();
     private int credits;
 
     public Student() {
     }
 
-    public Student(String name) {
+    public Student(String name, String fn) {
         this.name = name;
+        this.fn = fn;
     }
 
     public String getName() {
@@ -36,12 +37,12 @@ public class Student {
         this.fn = fn;
     }
 
-    public int getCourse() {
-        return course;
+    public int getYear() {
+        return year;
     }
 
-    public void setCourse(int course) {
-        this.course = course;
+    public void setYear(int year) {
+        this.year = year;
     }
 
     public StudentStatus getStatus() {
@@ -76,20 +77,20 @@ public class Student {
         this.group = group;
     }
 
-    public Map<MandatoryDiscipline, Integer> getMandatoryDisciplineSet() {
-        return mandatoryDisciplineSet;
+    public Map<MandatoryCourse, Integer> getMandatoryCourseMap() {
+        return mandatoryCourseMap;
     }
 
-    public void setMandatoryDisciplineSet(Map<MandatoryDiscipline, Integer> mandatoryDisciplineSet) {
-        this.mandatoryDisciplineSet = mandatoryDisciplineSet;
+    public void setMandatoryCourseMap(Map<MandatoryCourse, Integer> mandatoryCourseMap) {
+        this.mandatoryCourseMap = mandatoryCourseMap;
     }
 
-    public Map<OptionalDiscipline, Integer> getOptionalDisciplineSet() {
-        return optionalDisciplineSet;
+    public Map<OptionalCourse, Integer> getOptionalCourseMap() {
+        return optionalCourseMap;
     }
 
-    public void setOptionalDisciplineSet(Map<OptionalDiscipline, Integer> optionalDisciplineSet) {
-        this.optionalDisciplineSet = optionalDisciplineSet;
+    public void setOptionalCourseMap(Map<OptionalCourse, Integer> optionalCourseMap) {
+        this.optionalCourseMap = optionalCourseMap;
     }
 
     public int getCredits() {
@@ -118,13 +119,13 @@ public class Student {
         return "Student{" +
                 "name='" + name + '\'' +
                 ", fn='" + fn + '\'' +
-                ", course=" + course +
+                ", course=" + year +
                 ", program=" + program +
                 ", group=" + group +
                 ", status=" + status +
                 ", averageGrade=" + averageGrade +
-                ", mandatoryDisciplineSet=" + mandatoryDisciplineSet +
-                ", optionalDisciplineSet=" + optionalDisciplineSet +
+                ", mandatoryCourseMap=" + mandatoryCourseMap +
+                ", optionalCourseMap=" + optionalCourseMap +
                 ", credits=" + credits +
                 '}';
     }
