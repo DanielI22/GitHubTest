@@ -1,32 +1,36 @@
 package xml_parser;
 
 import bg.tu_varna.sit.StudentServiceSystem;
-import exceptions.FileNotFoundException;
+import exceptions.InvalidFileOrFilePathException;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.transform.stream.StreamSource;
 import java.io.File;
 
 public class JaxXMLToObject {
-    public static StudentServiceSystem jaxbXmlFileToObject(String fileName) throws FileNotFoundException {
-
-        File xmlFile = new File(fileName);
-
-        JAXBContext jaxbContext;
+    public static StudentServiceSystem jaxbXmlFileToObject(String fileName) throws InvalidFileOrFilePathException {
         try {
-            jaxbContext = JAXBContext.newInstance(StudentServiceSystem.class);
-            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+            File xmlFile = new File(fileName);
+            if(xmlFile.createNewFile()) {
+                StudentServiceSystem.getInstance().getMainProgramSet().clear();
+                StudentServiceSystem.getInstance().getMainStudentSet().clear();
+                return StudentServiceSystem.getInstance();
+            }
+            else {
+                JAXBContext jaxbContext;
 
-            JAXBElement<StudentServiceSystem> root =
-                    jaxbUnmarshaller.unmarshal(new StreamSource(xmlFile), StudentServiceSystem.class);
-            StudentServiceSystem mySystem = root.getValue();
+                jaxbContext = JAXBContext.newInstance(StudentServiceSystem.class);
+                Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
 
-            return mySystem;
-        } catch (JAXBException e) {
-            throw new FileNotFoundException();
+                JAXBElement<StudentServiceSystem> root =
+                        jaxbUnmarshaller.unmarshal(new StreamSource(xmlFile), StudentServiceSystem.class);
+                StudentServiceSystem mySystem = root.getValue();
+                return mySystem;
+            }
+        } catch (Exception e) {
+            throw new InvalidFileOrFilePathException();
         }
     }
 }

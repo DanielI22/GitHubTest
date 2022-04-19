@@ -1,23 +1,25 @@
 package command_lines;
 
 import bg.tu_varna.sit.StudentServiceSystem;
-import exceptions.FileNotFoundException;
-import exceptions.InvalidArgumentsExcepetion;
+import exceptions.InvalidFileOrFilePathException;
+import exceptions.InvalidArgumentsException;
 import xml_parser.JaxXMLToObject;
 
 public class OpenCommand implements Command{
     public static boolean openedFile = false;
+    public static String filePath;
     public static String fileName;
 
     @Override
-    public void execute(Object[] args) throws InvalidArgumentsExcepetion, FileNotFoundException {
+    public void execute(Object[] args) throws InvalidArgumentsException, InvalidFileOrFilePathException {
         if(args.length==0){
-            throw new InvalidArgumentsExcepetion();
+            throw new InvalidArgumentsException();
         }
-        fileName = args[0].toString();
-        StudentServiceSystem.setSystemInstance(JaxXMLToObject.jaxbXmlFileToObject(fileName));
+        filePath = args[0].toString();
+        StudentServiceSystem.setSystemInstance(JaxXMLToObject.jaxbXmlFileToObject(filePath));
         openedFile=true;
         System.out.println(StudentServiceSystem.getInstance().toString());
+        fileName = filePath.substring(filePath.lastIndexOf("\\")+1);
         System.out.println("Successfully opened " + fileName);
     }
 }

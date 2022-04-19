@@ -2,22 +2,23 @@ package command_lines;
 
 import bg.tu_varna.sit.StudentServiceSystem;
 import exceptions.FileNotOpenedException;
-import exceptions.InvalidArgumentsExcepetion;
+import exceptions.InvalidArgumentsException;
+import exceptions.InvalidFileOrFilePathException;
 import xml_parser.JaxObjectToXML;
 
 public class SaveAsCommand implements Command{
     @Override
-    public void execute(Object[] args) throws FileNotOpenedException, InvalidArgumentsExcepetion {
+    public void execute(Object[] args) throws FileNotOpenedException, InvalidArgumentsException, InvalidFileOrFilePathException {
         if(args.length==0){
-            throw new InvalidArgumentsExcepetion();
+            throw new InvalidArgumentsException();
         }
         if(!OpenCommand.openedFile){
             throw new FileNotOpenedException();
         }
 
-        String fileName = args[0].toString();
-        JaxObjectToXML.jaxbObjectToXML(StudentServiceSystem.getInstance(), fileName);
-
+        String filePath = args[0].toString();
+        JaxObjectToXML.jaxbObjectToXML(StudentServiceSystem.getInstance(), filePath);
+        String fileName = filePath.substring(filePath.lastIndexOf("\\")+1);
         System.out.println("Successfully saved " + fileName);
     }
 }

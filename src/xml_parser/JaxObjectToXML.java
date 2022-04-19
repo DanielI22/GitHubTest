@@ -1,6 +1,7 @@
 package xml_parser;
 
 import bg.tu_varna.sit.StudentServiceSystem;
+import exceptions.InvalidFileOrFilePathException;
 
 import java.io.File;
 import java.io.StringWriter;
@@ -10,7 +11,7 @@ import javax.xml.transform.stream.StreamSource;
 import javax.xml.namespace.QName;
 
 public class JaxObjectToXML {
-    public static void jaxbObjectToXML(StudentServiceSystem studentServiceSystem, String fileName) {
+    public static void jaxbObjectToXML(StudentServiceSystem studentServiceSystem, String fileName) throws InvalidFileOrFilePathException {
         try {
             //Create JAXB Context
             JAXBContext jaxbContext = JAXBContext.newInstance(StudentServiceSystem.class);
@@ -31,8 +32,8 @@ public class JaxObjectToXML {
 
             //Writes XML file to file-system
             jaxbMarshaller.marshal(jaxbElement, file);
-        } catch (JAXBException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            throw new InvalidFileOrFilePathException();
         }
     }
 }
