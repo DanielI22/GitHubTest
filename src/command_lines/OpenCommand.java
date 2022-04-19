@@ -11,7 +11,7 @@ public class OpenCommand implements Command{
     public static String fileName;
 
     @Override
-    public void execute(Object[] args) throws InvalidArgumentsException, InvalidFileOrFilePathException {
+    public void execute(Object[] args) throws InvalidFileOrFilePathException, InvalidArgumentsException {
         if(args.length==0){
             throw new InvalidArgumentsException();
         }
@@ -19,6 +19,8 @@ public class OpenCommand implements Command{
         StudentServiceSystem.setSystemInstance(JaxXMLToObject.jaxbXmlFileToObject(filePath));
         openedFile=true;
 
+        System.out.println(StudentServiceSystem.getInstance().toString());
+        StudentServiceSystem.getInstance().simulatePrograms();
         System.out.println(StudentServiceSystem.getInstance().toString());
         fileName = filePath.substring(filePath.lastIndexOf("\\")+1);
         System.out.println("Successfully opened " + fileName);

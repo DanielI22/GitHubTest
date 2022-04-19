@@ -8,7 +8,7 @@ import xml_parser.JaxObjectToXML;
 
 public class SaveAsCommand implements Command{
     @Override
-    public void execute(Object[] args) throws FileNotOpenedException, InvalidArgumentsException, InvalidFileOrFilePathException {
+    public void execute(Object[] args) throws FileNotOpenedException, InvalidFileOrFilePathException, InvalidArgumentsException {
         if(args.length==0){
             throw new InvalidArgumentsException();
         }

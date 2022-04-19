@@ -5,5 +5,5 @@ import exceptions.InvalidFileOrFilePathException;
 import exceptions.FileNotOpenedException;
 
 public interface Command {
-    void execute(Object[] args) throws FileNotOpenedException, InvalidArgumentsException, InvalidFileOrFilePathException;
+    void execute(Object[] args) throws FileNotOpenedException, InvalidFileOrFilePathException, InvalidArgumentsException;
 }

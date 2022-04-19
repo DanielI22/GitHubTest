@@ -35,7 +35,7 @@ public abstract class Course {
 
     @Override
     public String toString() {
-        return "Discipline{" +
+        return "Course{" +
                 "name='" + name + '\'' +
                 '}';
     }

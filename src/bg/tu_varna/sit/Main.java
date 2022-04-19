@@ -12,7 +12,6 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         while(true){
             try {
-
                 System.out.print(">");
                 String userInput = scanner.nextLine();
                 String[] splittedInput = userInput.split("[ ]+");
