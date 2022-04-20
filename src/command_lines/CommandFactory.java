@@ -1,5 +1,7 @@
 package command_lines;
 
+import bg.tu_varna.sit.StudentServiceSystem;
+
 public abstract class CommandFactory {
     public static Command getCommand(String commandName) {
         if (commandName.equalsIgnoreCase("open")) {
@@ -14,6 +16,8 @@ public abstract class CommandFactory {
             return new ExitCommand();
         } else if (commandName.equalsIgnoreCase("help")) {
             return new HelpCommand();
+        } else if (commandName.equalsIgnoreCase("simulate")) {
+            return new SimulateProgramsCommand();
         } else {
             return null;
         }

@@ -9,7 +9,8 @@ public class CloseCommand implements Command{
         if(!OpenCommand.openedFile){
             throw new FileNotOpenedException();
         }
-        StudentServiceSystem.setSystemInstance(null);
+        StudentServiceSystem.getInstance().getMainProgramSet().clear();
+        StudentServiceSystem.getInstance().getMainStudentSet().clear();
         OpenCommand.openedFile=false;
         System.out.println("Successfully closed " + OpenCommand.fileName);
     }

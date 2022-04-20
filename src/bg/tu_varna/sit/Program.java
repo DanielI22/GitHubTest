@@ -4,6 +4,8 @@ import java.util.*;
 
 public class Program {
     private String name;
+    private int numberOfYears = 4;
+    private int numberOfGroups = 5;
     private HashMap<MandatoryCourse, String> mandatoryCourseMap = new HashMap<>();
     private HashMap<OptionalCourse, String> optionalCourseMap = new HashMap<>();
     private int minCredits;
@@ -26,6 +28,22 @@ public class Program {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getNumberOfYears() {
+        return numberOfYears;
+    }
+
+    public void setNumberOfYears(int numberOfYears) {
+        this.numberOfYears = numberOfYears;
+    }
+
+    public int getNumberOfGroups() {
+        return numberOfGroups;
+    }
+
+    public void setNumberOfGroups(int numberOfGroups) {
+        this.numberOfGroups = numberOfGroups;
     }
 
     public HashMap<MandatoryCourse,String> getMandatoryCourseMap() {
