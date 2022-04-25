@@ -8,14 +8,14 @@ import javax.xml.bind.JAXBElement;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.transform.stream.StreamSource;
 import java.io.File;
+import command_lines.Simulator;
 
 public class JaxXMLToObject {
     public static StudentServiceSystem jaxbXmlFileToObject(String fileName) throws InvalidFileOrFilePathException {
         try {
             File xmlFile = new File(fileName);
             if(xmlFile.createNewFile()) {
-                StudentServiceSystem.getInstance().getMainProgramSet().clear();
-                StudentServiceSystem.getInstance().getMainStudentSet().clear();
+                Simulator.simulate();
                 return StudentServiceSystem.getInstance();
             }
             else {

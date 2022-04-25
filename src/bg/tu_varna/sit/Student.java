@@ -5,9 +5,9 @@ public class Student {
     private String name;
     private String fn;
     private int year;
-    private Program program;
+    private String program;
     private int group;
-    private StudentStatus status;
+    private StudentStatus status = StudentStatus.ACTIVE;
     private double averageGrade;
     private Map<MandatoryCourse, Integer> mandatoryCourseMap = new HashMap<>();
     private Map<OptionalCourse, Integer> optionalCourseMap = new HashMap<>();
@@ -61,11 +61,11 @@ public class Student {
         this.averageGrade = averageGrade;
     }
 
-    public Program getProgram() {
+    public String getProgram() {
         return program;
     }
 
-    public void setProgram(Program program) {
+    public void setProgram(String program) {
         this.program = program;
     }
 

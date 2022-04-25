@@ -309,10 +309,61 @@
         <averageGrade>0.0</averageGrade>
         <credits>0</credits>
         <fn>001</fn>
-        <group>0</group>
+        <group>3</group>
         <mandatoryCourseMap/>
         <name>George</name>
         <optionalCourseMap/>
-        <year>0</year>
+        <program>SIT</program>
+        <status>ACTIVE</status>
+        <year>1</year>
+    </mainStudentSet>
+    <mainStudentSet>
+        <averageGrade>0.0</averageGrade>
+        <credits>0</credits>
+        <fn>002</fn>
+        <group>2</group>
+        <mandatoryCourseMap/>
+        <name>Spas</name>
+        <optionalCourseMap/>
+        <program>ICT</program>
+        <status>ACTIVE</status>
+        <year>1</year>
+    </mainStudentSet>
+    <mainStudentSet>
+        <averageGrade>0.0</averageGrade>
+        <credits>0</credits>
+        <fn>003</fn>
+        <group>3</group>
+        <mandatoryCourseMap>
+            <entry>
+                <key>
+                    <name>Basic Mathematics</name>
+                </key>
+                <value>0</value>
+            </entry>
+            <entry>
+                <key>
+                    <name>Programming Fundamentals</name>
+                </key>
+                <value>0</value>
+            </entry>
+            <entry>
+                <key>
+                    <name>English</name>
+                </key>
+                <value>0</value>
+            </entry>
+            <entry>
+                <key>
+                    <name>Computer Fundamentals</name>
+                </key>
+                <value>0</value>
+            </entry>
+        </mandatoryCourseMap>
+        <name>Peter</name>
+        <optionalCourseMap/>
+        <program>SIT</program>
+        <status>ACTIVE</status>
+        <year>1</year>
     </mainStudentSet>
 </studentServiceSystem>

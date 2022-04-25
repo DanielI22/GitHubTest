@@ -1,9 +1,7 @@
 package command_lines;
 
-import exceptions.InvalidArgumentsException;
-import exceptions.InvalidFileOrFilePathException;
-import exceptions.FileNotOpenedException;
+import exceptions.*;
 
 public interface Command {
-    void execute(Object[] args) throws FileNotOpenedException, InvalidFileOrFilePathException, InvalidArgumentsException;
+    void execute(Object[] args) throws FileNotOpenedException, InvalidFileOrFilePathException, InvalidArgumentsException, InvalidProgramException, InvalidGroupException, StudentAlreadyExistsException;
 }

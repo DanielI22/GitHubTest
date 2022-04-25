@@ -3,9 +3,9 @@ package command_lines;
 import bg.tu_varna.sit.*;
 import java.util.HashMap;
 
-public class SimulateProgramsCommand implements Command{
-    @Override
-    public void execute(Object[] args) {
+public class Simulator {
+
+    public static void simulate() {
         //ALL 1
         MandatoryCourse discipline1 = new MandatoryCourse("Basic Mathematics");
         MandatoryCourse discipline2 = new MandatoryCourse("Computer Fundamentals");
@@ -131,7 +131,6 @@ public class SimulateProgramsCommand implements Command{
         StudentServiceSystem.getInstance().getMainProgramSet().add(program2);
         StudentServiceSystem.getInstance().getMainProgramSet().add(program3);
 
-        StudentServiceSystem.getInstance().getMainStudentSet().add(new Student("George", "001"));
         System.out.println("Successfully simulated programs.");
     }
 }
