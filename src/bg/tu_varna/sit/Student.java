@@ -1,11 +1,15 @@
 package bg.tu_varna.sit;
+import exceptions.InvalidProgramException;
+import xml_parser_utils.ProgramNameToProgram;
+import xml_parser_utils.StringToYearsSet;
+
 import java.util.*;
 
 public class Student {
     private String name;
     private String fn;
     private int year;
-    private String program;
+    private String programName;
     private int group;
     private StudentStatus status = StudentStatus.ACTIVE;
     private double averageGrade;
@@ -61,13 +65,18 @@ public class Student {
         this.averageGrade = averageGrade;
     }
 
-    public String getProgram() {
-        return program;
+    public String getProgramName() {
+        return programName;
     }
 
-    public void setProgram(String program) {
-        this.program = program;
+    public Program getProgram() throws InvalidProgramException {
+        return ProgramNameToProgram.getProgram(this.programName);
     }
+
+    public void setProgramName(String programName) {
+        this.programName = programName;
+    }
+
 
     public int getGroup() {
         return group;
@@ -83,6 +92,17 @@ public class Student {
 
     public void setMandatoryCourseMap(Map<MandatoryCourse, Integer> mandatoryCourseMap) {
         this.mandatoryCourseMap = mandatoryCourseMap;
+    }
+
+    public void setMandatoryCourseMapAuto() throws InvalidProgramException {
+        Program program = ProgramNameToProgram.getProgram(this.programName);
+        for(Map.Entry<MandatoryCourse, String> current: program.getMandatoryCourseMap().entrySet()) {
+            Set<Integer> yearsSet = StringToYearsSet.stringToSet(current.getValue());
+
+            if(Collections.max(yearsSet) == this.year) {
+                this.getMandatoryCourseMap().put(current.getKey(),0);
+            }
+        }
     }
 
     public Map<OptionalCourse, Integer> getOptionalCourseMap() {
@@ -120,7 +140,7 @@ public class Student {
                 "name='" + name + '\'' +
                 ", fn='" + fn + '\'' +
                 ", year=" + year +
-                ", program=" + program +
+                ", program=" + programName +
                 ", group=" + group +
                 ", status=" + status +
                 ", averageGrade=" + averageGrade +
@@ -129,4 +149,6 @@ public class Student {
                 ", credits=" + credits +
                 '}';
     }
+
+
 }

@@ -3,7 +3,7 @@ package command_lines;
 import bg.tu_varna.sit.StudentServiceSystem;
 import exceptions.InvalidArgumentsException;
 import exceptions.InvalidFileOrFilePathException;
-import xml_parser.JaxXMLToObject;
+import xml_parser_utils.JaxXMLToObject;
 
 public class OpenCommand implements Command{
     public static boolean openedFile = false;

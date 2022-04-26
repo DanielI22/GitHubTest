@@ -4,7 +4,7 @@ import bg.tu_varna.sit.StudentServiceSystem;
 import exceptions.FileNotOpenedException;
 import exceptions.InvalidArgumentsException;
 import exceptions.InvalidFileOrFilePathException;
-import xml_parser.JaxObjectToXML;
+import xml_parser_utils.JaxObjectToXML;
 
 public class SaveAsCommand implements Command{
     @Override

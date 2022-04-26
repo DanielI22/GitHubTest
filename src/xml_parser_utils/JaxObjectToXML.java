@@ -1,13 +1,11 @@
-package xml_parser;
+package xml_parser_utils;
 
 import bg.tu_varna.sit.StudentServiceSystem;
 import exceptions.InvalidFileOrFilePathException;
 
 import java.io.File;
-import java.io.StringWriter;
 
 import javax.xml.bind.*;
-import javax.xml.transform.stream.StreamSource;
 import javax.xml.namespace.QName;
 
 public class JaxObjectToXML {

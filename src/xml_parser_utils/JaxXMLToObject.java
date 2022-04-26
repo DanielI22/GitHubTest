@@ -1,4 +1,4 @@
-package xml_parser;
+package xml_parser_utils;
 
 import bg.tu_varna.sit.StudentServiceSystem;
 import exceptions.InvalidFileOrFilePathException;
