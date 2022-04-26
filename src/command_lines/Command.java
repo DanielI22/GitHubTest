@@ -3,5 +3,5 @@ package command_lines;
 import exceptions.*;
 
 public interface Command {
-    void execute(Object[] args) throws FileNotOpenedException, InvalidFileOrFilePathException, InvalidArgumentsException, InvalidProgramException, InvalidGroupException, StudentAlreadyExistsException;
+    void execute(Object[] args) throws FileNotOpenedException, InvalidFileOrFilePathException, InvalidArgumentsException, InvalidProgramException, InvalidGroupException, StudentAlreadyExistsException, InvalidStudentException, InvalidStatusException, BadStudentException, InvalidGraduationCreditsException, InvalidGraduationCoursesException, InvalidGraduationYearException;
 }

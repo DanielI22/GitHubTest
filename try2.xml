@@ -365,39 +365,81 @@
     </mainStudentSet>
     <mainStudentSet>
         <averageGrade>0.0</averageGrade>
-        <credits>0</credits>
+        <credits>12</credits>
         <fn>004</fn>
         <group>1</group>
         <mandatoryCourseMap>
             <entry>
                 <key>
+                    <name>Radio Communications</name>
+                </key>
+                <value>4</value>
+            </entry>
+            <entry>
+                <key>
+                    <name>Communication Networks</name>
+                </key>
+                <value>5</value>
+            </entry>
+            <entry>
+                <key>
+                    <name>Analog Circuits</name>
+                </key>
+                <value>3</value>
+            </entry>
+            <entry>
+                <key>
+                    <name>Video Technologies</name>
+                </key>
+                <value>3</value>
+            </entry>
+            <entry>
+                <key>
                     <name>Basic Mathematics</name>
                 </key>
-                <value>0</value>
+                <value>4</value>
             </entry>
             <entry>
                 <key>
                     <name>Programming Fundamentals</name>
                 </key>
-                <value>0</value>
+                <value>6</value>
+            </entry>
+            <entry>
+                <key>
+                    <name>Mathematics for Computing</name>
+                </key>
+                <value>3</value>
             </entry>
             <entry>
                 <key>
                     <name>English</name>
                 </key>
-                <value>0</value>
+                <value>5</value>
+            </entry>
+            <entry>
+                <key>
+                    <name>Electrical Engineering</name>
+                </key>
+                <value>3</value>
+            </entry>
+            <entry>
+                <key>
+                    <name>Electrical Measurements</name>
+                </key>
+                <value>3</value>
             </entry>
             <entry>
                 <key>
                     <name>Computer Fundamentals</name>
                 </key>
-                <value>0</value>
+                <value>3</value>
             </entry>
         </mandatoryCourseMap>
         <name>Simeon</name>
         <optionalCourseMap/>
         <programName>ICT</programName>
-        <status>ACTIVE</status>
-        <year>1</year>
+        <status>GRADUATED</status>
+        <year>4</year>
     </mainStudentSet>
 </studentServiceSystem>

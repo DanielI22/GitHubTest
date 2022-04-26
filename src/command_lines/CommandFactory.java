@@ -16,6 +16,10 @@ public abstract class CommandFactory {
             return new HelpCommand();
         } else if (commandName.equalsIgnoreCase("enroll")) {
             return new EnrollCommand();
+        } else if (commandName.equalsIgnoreCase("advance")) {
+            return new AdvanceCommand();
+        } else if (commandName.equalsIgnoreCase("graduate")) {
+            return new GraduateCommand();
         } else {
             return null;
         }

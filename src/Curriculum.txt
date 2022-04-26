@@ -37,7 +37,7 @@
         MandatoryCourse discipline19 = new MandatoryCourse("Web Programming");
         MandatoryCourse discipline14 = new MandatoryCourse("Operating Systems");
 
-        //IKT 4
+        //ICT 4
         MandatoryCourse discipline20 = new MandatoryCourse("Video Technologies");
         MandatoryCourse discipline17 = new MandatoryCourse("Analog Circuits");
 

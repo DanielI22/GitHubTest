@@ -1,7 +1,7 @@
 package bg.tu_varna.sit;
 import exceptions.InvalidProgramException;
 import xml_parser_utils.ProgramNameToProgram;
-import xml_parser_utils.StringToYearsSet;
+import xml_parser_utils.StringToIntegersSet;
 
 import java.util.*;
 
@@ -95,9 +95,8 @@ public class Student {
     }
 
     public void setMandatoryCourseMapAuto() throws InvalidProgramException {
-        Program program = ProgramNameToProgram.getProgram(this.programName);
-        for(Map.Entry<MandatoryCourse, String> current: program.getMandatoryCourseMap().entrySet()) {
-            Set<Integer> yearsSet = StringToYearsSet.stringToSet(current.getValue());
+        for(Map.Entry<MandatoryCourse, String> current: this.getProgram().getMandatoryCourseMap().entrySet()) {
+            Set<Integer> yearsSet = StringToIntegersSet.stringToSet(current.getValue());
 
             if(Collections.max(yearsSet) == this.year) {
                 this.getMandatoryCourseMap().put(current.getKey(),0);

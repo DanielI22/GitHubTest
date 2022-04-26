@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
-public class StringToYearsSet {
+public class StringToIntegersSet {
     public static Set<Integer> stringToSet(String string){
         Scanner scanner = new Scanner(string);
         Set<Integer> yearsSet = new HashSet<>();
