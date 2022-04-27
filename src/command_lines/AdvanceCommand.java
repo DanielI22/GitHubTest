@@ -50,14 +50,15 @@ public class AdvanceCommand implements Command{
             }
         }
         else if(student.getYear() < student.getProgram().getNumberOfYears()) {
-            if(numberOfNotTakenCourses < 2) {
-                student.setYear(student.getYear()+1);
-                student.setMandatoryCourseMapAuto();
-                System.out.println("Student with fn " + fn + " advanced successfully");
-            }
-            else {
+
+            if(numberOfNotTakenCourses > 2) {
                 throw new BadStudentException();
             }
+
+            student.setYear(student.getYear()+1);
+            student.updateMandatoryCourses();
+            student.updateAverageGrade();
+            System.out.println("Student with fn " + fn + " advanced successfully to year " + student.getYear());
         }
     }
 }

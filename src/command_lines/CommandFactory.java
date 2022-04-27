@@ -20,6 +20,8 @@ public abstract class CommandFactory {
             return new AdvanceCommand();
         } else if (commandName.equalsIgnoreCase("graduate")) {
             return new GraduateCommand();
+        } else if (commandName.equalsIgnoreCase("change")) {
+            return new ChangeCommand();
         } else {
             return null;
         }

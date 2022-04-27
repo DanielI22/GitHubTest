@@ -5,6 +5,8 @@ import exceptions.InvalidArgumentsException;
 import exceptions.InvalidFileOrFilePathException;
 import xml_parser_utils.JaxXMLToObject;
 
+import java.util.Arrays;
+
 public class OpenCommand implements Command{
     public static boolean openedFile = false;
     public static String filePath;
@@ -15,7 +17,7 @@ public class OpenCommand implements Command{
         if(args.length==0){
             throw new InvalidArgumentsException();
         }
-        filePath = args[0].toString();
+        filePath = String.join(" ", Arrays.stream(args).toArray(String[]::new));
         StudentServiceSystem.setSystemInstance(JaxXMLToObject.jaxbXmlFileToObject(filePath));
         openedFile=true;
 

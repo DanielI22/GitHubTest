@@ -94,15 +94,6 @@ public class Student {
         this.mandatoryCourseMap = mandatoryCourseMap;
     }
 
-    public void setMandatoryCourseMapAuto() throws InvalidProgramException {
-        for(Map.Entry<MandatoryCourse, String> current: this.getProgram().getMandatoryCourseMap().entrySet()) {
-            Set<Integer> yearsSet = StringToIntegersSet.stringToSet(current.getValue());
-
-            if(Collections.max(yearsSet) == this.year) {
-                this.getMandatoryCourseMap().put(current.getKey(),0);
-            }
-        }
-    }
 
     public Map<OptionalCourse, Integer> getOptionalCourseMap() {
         return optionalCourseMap;
@@ -149,5 +140,29 @@ public class Student {
                 '}';
     }
 
+    public void updateMandatoryCourses() throws InvalidProgramException {
+        for(Map.Entry<MandatoryCourse, String> current: this.getProgram().getMandatoryCourseMap().entrySet()) {
+            Set<Integer> yearsSet = StringToIntegersSet.stringToSet(current.getValue());
+
+            if(Collections.max(yearsSet) == this.year) {
+                this.getMandatoryCourseMap().put(current.getKey(),0);
+            }
+        }
+    }
+
+    public void updateAverageGrade() {
+        int sum = 0;
+        int br = 0;
+        for(Map.Entry<MandatoryCourse, Integer> current: this.getMandatoryCourseMap().entrySet()) {
+            br++;
+            if(current.getValue() == 0) {
+                sum+=2;
+            }
+            else {
+                sum += current.getValue();
+            }
+        }
+        this.setAverageGrade((double)sum/br);
+    }
 
 }

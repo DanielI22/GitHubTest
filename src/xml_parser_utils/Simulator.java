@@ -1,4 +1,4 @@
-package command_lines;
+package xml_parser_utils;
 
 import bg.tu_varna.sit.*;
 import java.util.HashMap;

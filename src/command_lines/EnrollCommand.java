@@ -31,7 +31,8 @@ public class EnrollCommand implements Command {
         student.setGroup(group);
         student.setProgramName(program.getName());
         student.setYear(1);
-        student.setMandatoryCourseMapAuto();
+        student.updateMandatoryCourses();
+        student.updateAverageGrade();
 
         if(StudentServiceSystem.getInstance().getMainStudentSet().add(student)) {
             System.out.println(name + " successfully enrolled in year 1 of program " + program.getName() + " in group " + group + " with fn " + fn);
