@@ -2,6 +2,6 @@ package exceptions;
 
 public class InvalidStatusException extends Exception{
     public InvalidStatusException() {
-        super("Student's status is invalid!");
+        super("Student's status is invalid for this command!");
     }
 }

@@ -21,7 +21,6 @@ public class GraduateCommand implements Command{
         }
 
         String fn = args[0].toString();
-
         Student student = FnToStudent.findStudent(fn);
 
         if(!student.getStatus().equals(StudentStatus.ACTIVE)) {

@@ -22,6 +22,10 @@ public abstract class CommandFactory {
             return new GraduateCommand();
         } else if (commandName.equalsIgnoreCase("change")) {
             return new ChangeCommand();
+        } else if (commandName.equalsIgnoreCase("interrupt")) {
+            return new InterruptCommand();
+        } else if (commandName.equalsIgnoreCase("resume")) {
+            return new ResumeCommand();
         } else {
             return null;
         }
