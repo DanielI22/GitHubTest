@@ -35,8 +35,6 @@ public abstract class Course {
 
     @Override
     public String toString() {
-        return "Course{" +
-                "name='" + name + '\'' +
-                '}';
+        return name;
     }
 }

@@ -22,6 +22,9 @@ public class EnrollCommand implements Command {
 
 
         Program program = ProgramNameToProgram.getProgram(programName);
+        if(program==null) {
+            throw new InvalidProgramException();
+        }
 
         if(group < 0 || group > program.getNumberOfGroups()) {
             throw new InvalidGroupException();

@@ -307,64 +307,6 @@
     </mainProgramSet>
     <mainStudentSet>
         <averageGrade>0.0</averageGrade>
-        <credits>0</credits>
-        <fn>001</fn>
-        <group>3</group>
-        <mandatoryCourseMap/>
-        <name>George</name>
-        <optionalCourseMap/>
-        <status>ACTIVE</status>
-        <year>1</year>
-    </mainStudentSet>
-    <mainStudentSet>
-        <averageGrade>0.0</averageGrade>
-        <credits>0</credits>
-        <fn>002</fn>
-        <group>2</group>
-        <mandatoryCourseMap/>
-        <name>Spas</name>
-        <optionalCourseMap/>
-        <status>ACTIVE</status>
-        <year>1</year>
-    </mainStudentSet>
-    <mainStudentSet>
-        <averageGrade>0.0</averageGrade>
-        <credits>0</credits>
-        <fn>003</fn>
-        <group>3</group>
-        <mandatoryCourseMap>
-            <entry>
-                <key>
-                    <name>Basic Mathematics</name>
-                </key>
-                <value>0</value>
-            </entry>
-            <entry>
-                <key>
-                    <name>Programming Fundamentals</name>
-                </key>
-                <value>0</value>
-            </entry>
-            <entry>
-                <key>
-                    <name>English</name>
-                </key>
-                <value>0</value>
-            </entry>
-            <entry>
-                <key>
-                    <name>Computer Fundamentals</name>
-                </key>
-                <value>0</value>
-            </entry>
-        </mandatoryCourseMap>
-        <name>Peter</name>
-        <optionalCourseMap/>
-        <status>ACTIVE</status>
-        <year>1</year>
-    </mainStudentSet>
-    <mainStudentSet>
-        <averageGrade>0.0</averageGrade>
         <credits>12</credits>
         <fn>004</fn>
         <group>1</group>
@@ -717,7 +659,15 @@
             </entry>
         </mandatoryCourseMap>
         <name>fil</name>
-        <optionalCourseMap/>
+        <optionalCourseMap>
+            <entry>
+                <key>
+                    <name>Sport</name>
+                    <credits>4</credits>
+                </key>
+                <value>2</value>
+            </entry>
+        </optionalCourseMap>
         <programName>ICT</programName>
         <status>ACTIVE</status>
         <year>4</year>

@@ -1,5 +1,5 @@
 package bg.tu_varna.sit;
-import exceptions.InvalidProgramException;
+import xml_parser_utils.MapPrinter;
 import xml_parser_utils.ProgramNameToProgram;
 import xml_parser_utils.StringToIntegersSet;
 
@@ -69,7 +69,7 @@ public class Student {
         return programName;
     }
 
-    public Program getProgram() throws InvalidProgramException {
+    public Program getProgram() {
         return ProgramNameToProgram.getProgram(this.programName);
     }
 
@@ -126,21 +126,23 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "name='" + name + '\'' +
-                ", fn='" + fn + '\'' +
-                ", year=" + year +
-                ", program=" + programName +
-                ", group=" + group +
-                ", status=" + status +
-                ", averageGrade=" + averageGrade +
-                ", mandatoryCourseMap=" + mandatoryCourseMap +
-                ", optionalCourseMap=" + optionalCourseMap +
-                ", credits=" + credits +
-                '}';
+        return "Student Info:\n" +
+                "Faculty number     " + fn + "\n"+
+                "Name               " + name + "\n"+
+                "Status             " + status + "\n"+
+                "Program            " + programName + "\n"+
+                "Year               " + year + "\n"+
+                "Group              " + group + "\n"+
+                "Mandatory courses:\n" +
+                MapPrinter.printGradesMandatory(mandatoryCourseMap) +
+                "Optional courses:\n" +
+                MapPrinter.printGradesOptional(optionalCourseMap) +
+                "Credits            " + credits + "\n"+
+                "Credits for graduation: " + this.getProgram().getMinCredits() + "\n"+
+                "Average grade      " + averageGrade;
     }
 
-    public void updateMandatoryCourses() throws InvalidProgramException {
+    public void updateMandatoryCourses() {
         for(Map.Entry<MandatoryCourse, String> current: this.getProgram().getMandatoryCourseMap().entrySet()) {
             Set<Integer> yearsSet = StringToIntegersSet.stringToSet(current.getValue());
 
@@ -154,6 +156,15 @@ public class Student {
         int sum = 0;
         int br = 0;
         for(Map.Entry<MandatoryCourse, Integer> current: this.getMandatoryCourseMap().entrySet()) {
+            br++;
+            if(current.getValue() == 0) {
+                sum+=2;
+            }
+            else {
+                sum += current.getValue();
+            }
+        }
+        for(Map.Entry<OptionalCourse, Integer> current: this.getOptionalCourseMap().entrySet()) {
             br++;
             if(current.getValue() == 0) {
                 sum+=2;

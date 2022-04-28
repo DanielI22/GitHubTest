@@ -21,7 +21,6 @@ public class OpenCommand implements Command{
         StudentServiceSystem.setSystemInstance(JaxXMLToObject.jaxbXmlFileToObject(filePath));
         openedFile=true;
 
-        System.out.println(StudentServiceSystem.getInstance().toString());
         fileName = filePath.substring(filePath.lastIndexOf("\\")+1);
         System.out.println("Successfully opened " + fileName);
     }

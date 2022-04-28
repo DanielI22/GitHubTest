@@ -2,7 +2,6 @@ package command_lines;
 
 import bg.tu_varna.sit.MandatoryCourse;
 import bg.tu_varna.sit.Student;
-import bg.tu_varna.sit.StudentServiceSystem;
 import bg.tu_varna.sit.StudentStatus;
 import exceptions.*;
 import xml_parser_utils.FnToStudent;
@@ -11,7 +10,7 @@ import java.util.Map;
 
 public class AdvanceCommand implements Command{
     @Override
-    public void execute(Object[] args) throws FileNotOpenedException, InvalidArgumentsException, InvalidStudentException, InvalidStatusException, BadStudentException, InvalidProgramException, InvalidGraduationCreditsException, InvalidGraduationCoursesException {
+    public void execute(Object[] args) throws FileNotOpenedException, InvalidArgumentsException, InvalidStudentException, InvalidStatusException, BadStudentException, InvalidGraduationCreditsException, InvalidGraduationCoursesException {
         if(args.length < 1){
             throw new InvalidArgumentsException();
         }

@@ -16,7 +16,7 @@ import java.util.Set;
 
 public class ChangeCommand implements Command{
     @Override
-    public void execute(Object[] args) throws InvalidArgumentsException, FileNotOpenedException, InvalidStudentException, InvalidChangeOptionException, InvalidProgramException, InvalidGroupException, InvalidYearException, InvalidStatusException, BadStudentException, UnallowedProgramChangeException, UnallowedProgramChangeGradesException, AlreadyDoneException {
+    public void execute(Object[] args) throws InvalidArgumentsException, FileNotOpenedException, InvalidStudentException, InvalidChangeOptionException, InvalidProgramException, InvalidGroupException, InvalidYearChangeException, InvalidStatusException, BadStudentException, UnallowedProgramChangeException, UnallowedProgramChangeGradesException, AlreadyDoneException {
         if(args.length < 3){
             throw new InvalidArgumentsException();
         }
@@ -36,6 +36,9 @@ public class ChangeCommand implements Command{
         if(option.equalsIgnoreCase("program")) {
             String programName = args[2].toString();
             Program program = ProgramNameToProgram.getProgram(programName);
+            if(program==null) {
+                throw new InvalidProgramException();
+            }
 
             if(programName.equalsIgnoreCase(student.getProgramName())) {
                 throw new AlreadyDoneException();
@@ -89,7 +92,7 @@ public class ChangeCommand implements Command{
             }
 
             if(year != student.getYear() + 1 || year > student.getProgram().getNumberOfYears()) {
-                throw new InvalidYearException();
+                throw new InvalidYearChangeException();
             }
 
             int numberOfNotTakenCourses = 0;

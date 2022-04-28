@@ -14,6 +14,7 @@ public class JaxXMLToObject {
         try {
             File xmlFile = new File(fileName);
             if(xmlFile.createNewFile()) {
+                System.out.println("Successfully created " + fileName);
                 Simulator.simulate();
                 return StudentServiceSystem.getInstance();
             }
