@@ -1,9 +1,6 @@
 package command_lines;
 
-import bg.tu_varna.sit.MandatoryCourse;
-import bg.tu_varna.sit.Program;
-import bg.tu_varna.sit.Student;
-import bg.tu_varna.sit.StudentStatus;
+import bg.tu_varna.sit.*;
 import exceptions.*;
 import xml_parser_utils.FnToStudent;
 import xml_parser_utils.ProgramNameToProgram;
@@ -78,7 +75,7 @@ public class ChangeCommand implements Command{
                 throw new AlreadyDoneException();
             }
 
-            if(group < 0 || group > student.getProgram().getNumberOfGroups()) {
+            if(group <= 0 || group > student.getProgram().getNumberOfGroups()) {
                 throw new InvalidGroupException();
             }
 
@@ -97,6 +94,11 @@ public class ChangeCommand implements Command{
 
             int numberOfNotTakenCourses = 0;
             for(Map.Entry<MandatoryCourse, Integer> current: student.getMandatoryCourseMap().entrySet()) {
+                if(current.getValue() < 3) {
+                    numberOfNotTakenCourses++;
+                }
+            }
+            for(Map.Entry<OptionalCourse, Integer> current: student.getOptionalCourseMap().entrySet()) {
                 if(current.getValue() < 3) {
                     numberOfNotTakenCourses++;
                 }

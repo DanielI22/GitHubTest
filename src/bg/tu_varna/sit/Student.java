@@ -139,14 +139,14 @@ public class Student {
                 MapPrinter.printGradesOptional(optionalCourseMap) +
                 "Credits            " + credits + "\n"+
                 "Credits for graduation: " + this.getProgram().getMinCredits() + "\n"+
-                "Average grade      " + averageGrade;
+                "Average grade      " + String.format("%.2f", averageGrade);
     }
 
     public void updateMandatoryCourses() {
         for(Map.Entry<MandatoryCourse, String> current: this.getProgram().getMandatoryCourseMap().entrySet()) {
             Set<Integer> yearsSet = StringToIntegersSet.stringToSet(current.getValue());
 
-            if(Collections.max(yearsSet) == this.year) {
+            if(Collections.max(yearsSet) == this.year && !(this.getMandatoryCourseMap().containsKey(current.getKey()))) {
                 this.getMandatoryCourseMap().put(current.getKey(),0);
             }
         }

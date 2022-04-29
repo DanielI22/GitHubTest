@@ -30,6 +30,8 @@ public abstract class CommandFactory {
             return new PrintCommand();
         } else if (commandName.equalsIgnoreCase("printall")) {
             return new PrintAllCommand();
+        } else if (commandName.equalsIgnoreCase("enrollin")) {
+            return new EnrollInCommand();
         } else {
             return null;
         }

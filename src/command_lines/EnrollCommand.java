@@ -26,7 +26,7 @@ public class EnrollCommand implements Command {
             throw new InvalidProgramException();
         }
 
-        if(group < 0 || group > program.getNumberOfGroups()) {
+        if(group <= 0 || group > program.getNumberOfGroups()) {
             throw new InvalidGroupException();
         }
 

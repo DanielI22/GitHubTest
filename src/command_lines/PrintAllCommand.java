@@ -26,7 +26,7 @@ public class PrintAllCommand implements Command {
             throw new InvalidProgramException();
         }
 
-        if(year < 0 || year > program.getNumberOfYears()) {
+        if(year <= 0 || year > program.getNumberOfYears()) {
             throw new InvalidYearException();
         }
 

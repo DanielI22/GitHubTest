@@ -1,6 +1,7 @@
 package command_lines;
 
 import bg.tu_varna.sit.MandatoryCourse;
+import bg.tu_varna.sit.OptionalCourse;
 import bg.tu_varna.sit.Student;
 import bg.tu_varna.sit.StudentStatus;
 import exceptions.*;
@@ -29,6 +30,11 @@ public class AdvanceCommand implements Command{
 
         int numberOfNotTakenCourses = 0;
         for(Map.Entry<MandatoryCourse, Integer> current: student.getMandatoryCourseMap().entrySet()) {
+            if(current.getValue() < 3) {
+                numberOfNotTakenCourses++;
+            }
+        }
+        for(Map.Entry<OptionalCourse, Integer> current: student.getOptionalCourseMap().entrySet()) {
             if(current.getValue() < 3) {
                 numberOfNotTakenCourses++;
             }

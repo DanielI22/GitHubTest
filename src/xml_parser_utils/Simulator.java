@@ -7,59 +7,59 @@ public class Simulator {
 
     public static void simulate() {
         //ALL 1
-        MandatoryCourse discipline1 = new MandatoryCourse("Basic Mathematics");
-        MandatoryCourse discipline2 = new MandatoryCourse("Computer Fundamentals");
-        MandatoryCourse discipline3 = new MandatoryCourse("Programming Fundamentals");
+        MandatoryCourse discipline1 = new MandatoryCourse("Basic_Mathematics");
+        MandatoryCourse discipline2 = new MandatoryCourse("Computer_Fundamentals");
+        MandatoryCourse discipline3 = new MandatoryCourse("Programming_Fundamentals");
         MandatoryCourse discipline4 = new MandatoryCourse("English");
 
         //SIT CST 2
-        MandatoryCourse discipline5 = new MandatoryCourse("Mathematics for Computing");
-        MandatoryCourse discipline6 = new MandatoryCourse("Data Structures");
-        MandatoryCourse discipline7 = new MandatoryCourse("Object-Oriented Programming");
+        MandatoryCourse discipline5 = new MandatoryCourse("Mathematics_for_Computing");
+        MandatoryCourse discipline6 = new MandatoryCourse("Data_Structures");
+        MandatoryCourse discipline7 = new MandatoryCourse("Object-Oriented_Programming");
 
         //ICT 2
-//        MandatoryCourse discipline5 = new MandatoryCourse("Mathematics for Computing");
-        MandatoryCourse discipline8 = new MandatoryCourse("Electrical Engineering");
-        MandatoryCourse discipline9 = new MandatoryCourse("Electrical Measurements");
+//        MandatoryCourse discipline5 = new MandatoryCourse("Mathematics_for_Computing");
+        MandatoryCourse discipline8 = new MandatoryCourse("Electrical_Engineering");
+        MandatoryCourse discipline9 = new MandatoryCourse("Electrical_Measurements");
 
         //SIT 3
         MandatoryCourse discipline10 = new MandatoryCourse("Microprocessors");
-        MandatoryCourse discipline11 = new MandatoryCourse("System Analysis");
-        MandatoryCourse discipline12 = new MandatoryCourse("Programming Systems");
+        MandatoryCourse discipline11 = new MandatoryCourse("System_Analysis");
+        MandatoryCourse discipline12 = new MandatoryCourse("Programming_Systems");
 
         //CST 3
 //        MandatoryCourse discipline10 = new MandatoryCourse("Microprocessors");
-        MandatoryCourse discipline13 = new MandatoryCourse("Information Encryption");
-        MandatoryCourse discipline14 = new MandatoryCourse("Operating Systems");
+        MandatoryCourse discipline13 = new MandatoryCourse("Information_Encryption");
+        MandatoryCourse discipline14 = new MandatoryCourse("Operating_Systems");
 
         //ICT 3
-        MandatoryCourse discipline15 = new MandatoryCourse("Communication Networks");
-        MandatoryCourse discipline16 = new MandatoryCourse("Radio Communications");
-        MandatoryCourse discipline17 = new MandatoryCourse("Analog Circuits");
+        MandatoryCourse discipline15 = new MandatoryCourse("Communication_Networks");
+        MandatoryCourse discipline16 = new MandatoryCourse("Radio_Communications");
+        MandatoryCourse discipline17 = new MandatoryCourse("Analog_Circuits");
 
         //SIT 4
-        MandatoryCourse discipline18 = new MandatoryCourse("Internet Technologies");
-//        MandatoryCourse discipline12 = new MandatoryCourse("Programming Systems");
+        MandatoryCourse discipline18 = new MandatoryCourse("Internet_Technologies");
+//        MandatoryCourse discipline12 = new MandatoryCourse("Programming_Systems");
 
         //CST 4
-        MandatoryCourse discipline19 = new MandatoryCourse("Web Programming");
-//        MandatoryCourse discipline14 = new MandatoryCourse("Operating Systems");
+        MandatoryCourse discipline19 = new MandatoryCourse("Web_Programming");
+//        MandatoryCourse discipline14 = new MandatoryCourse("Operating_Systems");
 
         //IKT 4
-        MandatoryCourse discipline20 = new MandatoryCourse("Video Technologies");
-//        MandatoryCourse discipline17 = new MandatoryCourse("Analog Circuits");
+        MandatoryCourse discipline20 = new MandatoryCourse("Video_Technologies");
+//        MandatoryCourse discipline17 = new MandatoryCourse("Analog_Circuits");
 
 
         //SIT CST 2 3 4
         OptionalCourse odiscipline1 = new OptionalCourse("Sport", 4);
-        OptionalCourse odiscipline2 = new OptionalCourse("Office Systems", 8);
-        OptionalCourse odiscipline3 = new OptionalCourse("Information Management", 6);
-        OptionalCourse odiscipline4 = new OptionalCourse("Embedded Microcontrollers", 7);
+        OptionalCourse odiscipline2 = new OptionalCourse("Office_Systems", 8);
+        OptionalCourse odiscipline3 = new OptionalCourse("Information_Management", 6);
+        OptionalCourse odiscipline4 = new OptionalCourse("Embedded_Microcontrollers", 7);
 
         //ICT 3 4
-        OptionalCourse odiscipline5 = new OptionalCourse("Optic Cable Systems", 5);
-        OptionalCourse odiscipline6 = new OptionalCourse("Video Systems", 5);
-        OptionalCourse odiscipline7 = new OptionalCourse("Technical Safety", 7);
+        OptionalCourse odiscipline5 = new OptionalCourse("Optic_Cable_Systems", 5);
+        OptionalCourse odiscipline6 = new OptionalCourse("Video_Systems", 5);
+        OptionalCourse odiscipline7 = new OptionalCourse("Technical_Safety", 7);
 
         HashMap<MandatoryCourse, String> sitmap = new HashMap<>();
         sitmap.put(discipline1, "1");
