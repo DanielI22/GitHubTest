@@ -34,7 +34,7 @@ public class PrintAllCommand implements Command {
         for(Student current: StudentServiceSystem.getInstance().getMainStudentSet()) {
             if(current.getProgramName().equalsIgnoreCase(programName) && current.getYear() == year) {
                 isEmpty = false;
-                System.out.println(current + "\n");
+                System.out.println(current);
             }
         }
         if(isEmpty) {

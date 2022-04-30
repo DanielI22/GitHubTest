@@ -132,6 +132,16 @@ public class Student {
                 "Status             " + status + "\n"+
                 "Program            " + programName + "\n"+
                 "Year               " + year + "\n"+
+                "Group              " + group + "\n";
+    }
+
+    public String report() {
+        return "Student Info:\n" +
+                "Faculty number     " + fn + "\n"+
+                "Name               " + name + "\n"+
+                "Status             " + status + "\n"+
+                "Program            " + programName + "\n"+
+                "Year               " + year + "\n"+
                 "Group              " + group + "\n"+
                 "Mandatory courses:\n" +
                 MapPrinter.printGradesMandatory(mandatoryCourseMap) +

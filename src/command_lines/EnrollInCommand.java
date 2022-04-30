@@ -51,13 +51,13 @@ public class EnrollInCommand implements Command {
 
         boolean alreadyExist = false;
         for(MandatoryCourse current: student.getMandatoryCourseMap().keySet()) {
-            if ((current.getName().equals(course))) {
+            if ((current.getName().equalsIgnoreCase(course))) {
                 alreadyExist = true;
                 break;
             }
         }
         for(OptionalCourse current: student.getOptionalCourseMap().keySet()) {
-            if ((current.getName().equals(course))) {
+            if ((current.getName().equalsIgnoreCase(course))) {
                 alreadyExist = true;
                 break;
             }
@@ -73,20 +73,22 @@ public class EnrollInCommand implements Command {
             if(currentProgram.equals(student.getProgram())) {
                 for (Map.Entry<MandatoryCourse, String> currentCourse: currentProgram.getMandatoryCourseMap().entrySet()) {
                     Set<Integer> currentCourseYearsSet = StringToIntegersSet.stringToSet(currentCourse.getValue());
-                    if(currentCourse.getKey().getName().equals(course) && currentCourseYearsSet.contains(student.getYear()) ) {
+                    if(currentCourse.getKey().getName().equalsIgnoreCase(course) && currentCourseYearsSet.contains(student.getYear()) ) {
                         System.out.println("Student with fn " + fn + " enrolled in " + course + " successfully!");
                         student.getMandatoryCourseMap().put(currentCourse.getKey(), 0);
                         student.updateAverageGrade();
                         isAdded = true;
+                        break;
                     }
                 }
                 for (Map.Entry<OptionalCourse, String> currentCourse: currentProgram.getOptionalCourseMap().entrySet()) {
                     Set<Integer> currentCourseYearsSet = StringToIntegersSet.stringToSet(currentCourse.getValue());
-                    if(currentCourse.getKey().getName().equals(course) && currentCourseYearsSet.contains(student.getYear())) {
+                    if(currentCourse.getKey().getName().equalsIgnoreCase(course) && currentCourseYearsSet.contains(student.getYear())) {
                         System.out.println("Student with fn " + fn + " enrolled in " + course + " successfully!");
                         student.getOptionalCourseMap().put(currentCourse.getKey(), 0);
                         student.updateAverageGrade();
                         isAdded = true;
+                        break;
                     }
                 }
             }

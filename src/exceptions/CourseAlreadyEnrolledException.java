@@ -1,4 +1,4 @@
-package command_lines;
+package exceptions;
 
 public class CourseAlreadyEnrolledException extends Exception {
     public CourseAlreadyEnrolledException() {

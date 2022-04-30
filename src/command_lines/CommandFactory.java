@@ -32,6 +32,12 @@ public abstract class CommandFactory {
             return new PrintAllCommand();
         } else if (commandName.equalsIgnoreCase("enrollin")) {
             return new EnrollInCommand();
+        } else if (commandName.equalsIgnoreCase("addgrade")) {
+            return new AddGradeCommand();
+        } else if (commandName.equalsIgnoreCase("protocol")) {
+            return new ProtocolCommand();
+        } else if (commandName.equalsIgnoreCase("report")) {
+            return new ReportCommand();
         } else {
             return null;
         }
