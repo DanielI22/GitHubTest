@@ -18,6 +18,7 @@ public class OpenCommand implements Command{
             throw new InvalidArgumentsException();
         }
         filePath = String.join(" ", Arrays.stream(args).toArray(String[]::new));
+
         StudentServiceSystem.setSystemInstance(JaxXMLToObject.jaxbXmlFileToObject(filePath));
         openedFile=true;
 
