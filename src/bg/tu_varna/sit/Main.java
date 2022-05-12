@@ -10,7 +10,8 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter command:");
+        System.out.println("Welcome to the Students Information System.");
+        System.out.println("Please Enter command:");
         while(true){
             try {
                 System.out.print(">");
